@@ -235,18 +235,18 @@
     }
   };
 
-  // 🔧 Função de tradução (corrigida para manter os links)
+  
   function changeLanguage(lang) {
     document.querySelectorAll('[data-key]').forEach(el => {
       const key = el.getAttribute('data-key');
       const translation = translations[lang][key];
 
       if (translation) {
-        // Se o elemento contém um link <a>, altera apenas o texto do link
+        
         if (el.querySelector('a')) {
           el.querySelector('a').textContent = translation;
         }
-        // Caso contrário, altera o texto normalmente
+        
         else {
           el.textContent = translation;
         }
@@ -255,7 +255,7 @@
     localStorage.setItem('lang', lang);
   }
 
-  // Carregar idioma salvo e aplicar ao abrir
+
   document.addEventListener("DOMContentLoaded", () => {
     const savedLang = localStorage.getItem('lang') || 'pt';
     changeLanguage(savedLang);
